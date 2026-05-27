@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->string('grade');
+            $table->date('birthday');
             $table->string('status');
             $table->date('trial_date')->nullable();
             $table->string('join_month')->nullable();

@@ -23,7 +23,7 @@
     <input type="date" id="trial_date" name="trial_date" value="{{old('trial_date')}}">
 
     <label for="join_month">入会月</label>
-    <input type="month" id="join_month" name="join_month" value="{{old('join_month)}}">
+    <input type="month" id="join_month" name="join_month" value="{{old('join_month')}}">
 
     <button type="submit">登録</button>
 </form>
