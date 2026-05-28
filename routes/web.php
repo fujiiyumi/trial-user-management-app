@@ -24,4 +24,5 @@ require __DIR__.'/auth.php';
 Route::middleware('auth')->group(function(){
     Route::get('/trial-students',[TrialStudentController::class,'index'])->name('trial-students.index');
     Route::get('/trial-students/create',[TrialStudentController::class,'create'])->name('trial-students.create');
+    Route::post('/trial-students',[TrialStudentController::class,'store'])->name('trial-students.store');
 });

@@ -17,4 +17,16 @@ class TrialStudentController extends Controller
     public function create(){
         return view('trial-students.create');
     }
+
+    public function store(Request $request){
+       $trialStudents= $request->validate([
+            'name'=>'required',
+            'birthday'=>'required',
+            'status'=>'required',
+        ]);
+
+        TrialStudent::create($trialStudents);
+
+        return redirect()->route('trial-students.index');
+    }
 }
