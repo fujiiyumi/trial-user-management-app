@@ -14,15 +14,17 @@ class TrialStudentController extends Controller
         return view('trial-students.index', compact('trialStudents'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('trial-students.create');
     }
 
-    public function store(Request $request){
-       $trialStudents= $request->validate([
-            'name'=>'required',
-            'birthday'=>'required',
-            'status'=>'required',
+    public function store(Request $request)
+    {
+        $trialStudents = $request->validate([
+            'name' => 'required',
+            'birthday' => 'required',
+            'status' => 'required',
         ]);
 
         TrialStudent::create($trialStudents);
