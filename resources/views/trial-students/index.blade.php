@@ -19,7 +19,12 @@
         <td>{{$trialStudent->status}}</td>
         <td>{{$trialStudent->trial_date}}</td>
         <td>{{$trialStudent->join_month}}</td>
-
+        <td>{{$trialStudent->has_unread_comment}}</td>
+        <td>
+            <a href="{{route('trial-students.show',$trialStudent)}}">
+                詳細
+            </a>
+        </td>
     </tr>
     @endforeach
 </table>

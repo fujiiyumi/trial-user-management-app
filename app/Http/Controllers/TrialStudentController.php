@@ -31,4 +31,8 @@ class TrialStudentController extends Controller
 
         return redirect()->route('trial-students.index');
     }
+
+    public function show(TrialStudent $trialStudent){
+        return view('trial-students.show',compact('trialStudent'));
+    }
 }
