@@ -26,4 +26,5 @@ Route::middleware('auth')->group(function(){
     Route::get('/trial-students/create',[TrialStudentController::class,'create'])->name('trial-students.create');
     Route::post('/trial-students',[TrialStudentController::class,'store'])->name('trial-students.store');
     Route::get('/trial-students/{trialStudent}',[TrialStudentController::class,'show'])->name('trial-students.show');
+    Route::put('/trial-students/{trialStudent}',[TrialStudentController::class,'update'])->name('trial-students.update');
 });

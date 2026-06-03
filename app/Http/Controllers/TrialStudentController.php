@@ -35,4 +35,19 @@ class TrialStudentController extends Controller
     public function show(TrialStudent $trialStudent){
         return view('trial-students.show',compact('trialStudent'));
     }
-}
+
+   public function update(Request $request, TrialStudent $trialStudent){
+        $validated=$request->validate([
+            'name'=>'required',
+            'birthday'=>'required',
+            'status'=>'required',
+            'trial_date'=>'nullable',
+            'join_month'=>'nullable',
+        ]);
+
+        $trialStudent->update($validated);
+
+        return redirect()->route('trial-students.show',$trialStudent)
+        ->with('success','更新しました');
+    }
+} 

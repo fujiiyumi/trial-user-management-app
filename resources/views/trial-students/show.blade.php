@@ -1,5 +1,9 @@
 <h1>詳細画面</h1>
 
+@if(session('success'))
+<p>{{session('success')}}</p>
+@endif
+
 <form action="{{route('trial-students.update',$trialStudent)}}" method="post">
     @csrf
     @method('PUT')
