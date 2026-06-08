@@ -29,4 +29,5 @@ Route::middleware('auth')->group(function(){
     Route::get('/trial-students/{trialStudent}',[TrialStudentController::class,'show'])->name('trial-students.show');
     Route::put('/trial-students/{trialStudent}',[TrialStudentController::class,'update'])->name('trial-students.update');
     Route::post('/trial-students/{trialStudent}/comments',[CommentController::class,'store'])->name('comments.store');
+    Route::patch('trial-students/{trialStudent}/toggle-check',[TrialStudentController::class,'toggleCheck'])->name('trial-students.toggle-check');
 });

@@ -50,6 +50,21 @@
 </div>
 @endforeach
 
+<form action="{{route('trial-students.toggle-check',$trialStudent)}}" method="post">
+@csrf
+@method('PATCH')
+<div>
+<label for="has_unread_comment">要確認</label>
+<input type="checkbox" name="has_unread_comment" id="has_unread_comment" value="1"
+@checked($trialStudent->has_unread_comment)>
+</div>
+
+<div>
+<button type="submit">保存</button>
+</div>
+</form>
+
+
 <hr>
 
 

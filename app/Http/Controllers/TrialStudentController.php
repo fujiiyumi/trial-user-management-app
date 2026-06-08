@@ -55,4 +55,12 @@ class TrialStudentController extends Controller
         return redirect()->route('trial-students.show', $trialStudent)
             ->with('success', '更新しました');
     }
+
+    public function toggleCheck(Request $request,TrialStudent $trialStudent){
+        $trialStudent->update([
+            'has_unread_comment'=> $request->has('has_unread_comment'),
+        ]);
+
+        return redirect()->route('trial-students.show',$trialStudent);
+    }
 }
