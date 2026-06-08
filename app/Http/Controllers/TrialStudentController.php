@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TrialStudent;
 use Illuminate\Http\Request;
+use App\Models\Comment;
 
 class TrialStudentController extends Controller
 {
@@ -32,22 +33,26 @@ class TrialStudentController extends Controller
         return redirect()->route('trial-students.index');
     }
 
-    public function show(TrialStudent $trialStudent){
-        return view('trial-students.show',compact('trialStudent'));
+    public function show(TrialStudent $trialStudent)
+    {
+        $trialStudent->load('comments');
+
+        return view('trial-students.show', compact('trialStudent'));
     }
 
-   public function update(Request $request, TrialStudent $trialStudent){
-        $validated=$request->validate([
-            'name'=>'required',
-            'birthday'=>'required',
-            'status'=>'required',
-            'trial_date'=>'nullable',
-            'join_month'=>'nullable',
+    public function update(Request $request, TrialStudent $trialStudent)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'birthday' => 'required',
+            'status' => 'required',
+            'trial_date' => 'nullable',
+            'join_month' => 'nullable',
         ]);
 
         $trialStudent->update($validated);
 
-        return redirect()->route('trial-students.show',$trialStudent)
-        ->with('success','更新しました');
+        return redirect()->route('trial-students.show', $trialStudent)
+            ->with('success', '更新しました');
     }
-} 
+}

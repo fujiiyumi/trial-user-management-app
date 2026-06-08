@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrialStudentController;
 use App\Models\TrialStudent;
+use App\Http\Controllers\CommentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,4 +28,5 @@ Route::middleware('auth')->group(function(){
     Route::post('/trial-students',[TrialStudentController::class,'store'])->name('trial-students.store');
     Route::get('/trial-students/{trialStudent}',[TrialStudentController::class,'show'])->name('trial-students.show');
     Route::put('/trial-students/{trialStudent}',[TrialStudentController::class,'update'])->name('trial-students.update');
+    Route::post('/trial-students/{trialStudent}/comments',[CommentController::class,'store'])->name('comments.store');
 });

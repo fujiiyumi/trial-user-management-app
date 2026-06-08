@@ -40,4 +40,8 @@ class TrialStudent extends Model
             return '高校卒業以上';
         }
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }
