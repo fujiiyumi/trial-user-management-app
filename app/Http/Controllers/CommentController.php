@@ -23,4 +23,12 @@ class CommentController extends Controller
 
         return redirect()->route('trial-students.show',$trialStudent);
     }
+
+    public function destroy(Comment $comment){
+        $trialStudent = $comment->trialStudent;
+
+        $comment->delete();
+
+        return redirect()->route('trial-students.show',$trialStudent);
+    }
 }

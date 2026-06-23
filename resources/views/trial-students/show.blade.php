@@ -7,6 +7,13 @@
 <div>
     <p>{{$comment->comment}}</p>
     <small>{{$comment->created_at}}</small>
+    <form action="{{route('comments.destroy',$comment)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" onclick="return confirm('本当に削除しますか？')">
+            削除
+        </button>
+    </form>
 </div>
 @endforeach
 
@@ -15,6 +22,13 @@
 <div>
     <p>{{$comment->comment}}</p>
     <small>{{$comment->created_at}}</small>
+    <form action="{{route('comments.destroy',$comment)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" onclick="return confirm('本当に削除しますか？')">
+            削除
+        </button>
+    </form>
 </div>
 @endforeach
 
@@ -23,6 +37,13 @@
 <div>
     <p>{{$comment->comment}}</p>
     <small>{{$comment->created_at}}</small>
+    <form action="{{route('comments.destroy',$comment)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" onclick="return confirm('本当に削除しますか？')">
+            削除
+        </button>
+    </form>
 </div>
 @endforeach
 
@@ -31,6 +52,13 @@
 <div>
     <p>{{$comment->comment}}</p>
     <small>{{$comment->created_at}}</small>
+    <form action="{{route('comments.destroy',$comment)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" onclick="return confirm('本当に削除しますか？')">
+            削除
+        </button>
+    </form>
 </div>
 @endforeach
 
@@ -39,6 +67,13 @@
 <div>
     <p>{{$comment->comment}}</p>
     <small>{{$comment->created_at}}</small>
+    <form action="{{route('comments.destroy',$comment)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" onclick="return confirm('本当に削除しますか？')">
+            削除
+        </button>
+    </form>
 </div>
 @endforeach
 
@@ -47,6 +82,14 @@
 <div>
     <p>{{$comment->comment}}</p>
     <small>{{$comment->created_at}}</small>
+    <form action="{{route('comments.destroy',$comment)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" onclick="return confirm('本当に削除しますか？')">
+            削除
+        </button>
+</form>
+
 </div>
 @endforeach
 
