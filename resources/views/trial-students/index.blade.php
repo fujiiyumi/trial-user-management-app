@@ -1,5 +1,11 @@
 <x-app-layout>
-<h2>体験者一覧</h2>
+<x-slot name="header">
+    <a href="{{route('trial-students.create')}}">
+        新規作成
+    </a>
+</x-slot>
+
+
 
 <table>
     <tr>
