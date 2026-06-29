@@ -26,6 +26,9 @@ class TrialStudentController extends Controller
             'name' => 'required',
             'birthday' => 'required',
             'status' => 'required',
+            'trial_date'=>'nullable',
+            'join_month'=>'nullable',
+            'has_unread_comment'=>'nullable',
         ]);
 
         TrialStudent::create($trialStudents);
