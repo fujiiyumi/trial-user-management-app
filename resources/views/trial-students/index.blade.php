@@ -1,11 +1,20 @@
 <x-app-layout>
 <x-slot name="header">
-    <a href="{{route('trial-students.create')}}">
+    <div class="flex items-center justify-between">
+    <a href="{{route('trial-students.create')}}"
+    class="bg-rose-500 text-white px-4 py-2 rounded-lg hover:bg-rose-700 transition shadow-xl">
         新規作成
     </a>
-</x-slot>
 
-
+    <form action="{{route('logout')}}" method="post">
+        @csrf
+        <button type="submit"
+        class="bg-rose-500 text-white px-4 py-2 rounded-lg hover:bg-rose-700 transition shadow-xl">
+            ログアウト
+        </button>
+    </form>
+    </div>
+    </x-slot>
 
 <table>
     <tr>
