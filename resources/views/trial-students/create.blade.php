@@ -1,3 +1,7 @@
+<a href="{{route('trial-students.index')}}">
+    一覧に戻る
+</a>
+
 <h2>新規登録</h2>
 
 <form action="{{route('trial-students.store')}}" method="post">
