@@ -1,6 +1,11 @@
+<x-app-layout>
+    <x-slot name="header">
+    <a href="{{route('trial-students.index')}}"
+    class="bg-rose-500 text-white px-4 py-2 rounded-lg hover:bg-rose-700 transition shadow-xl">
+        一覧に戻る
+    </a>
+    </x-slot>
 <h2>コメント一覧</h2>
-
-<a href="{{route('trial-students.index')}}">一覧に戻る</a>
 
 <h3>問い合わせ</h3>
 @foreach($trialStudent->comments->where('status','問い合わせ') as $comment)
@@ -103,7 +108,10 @@
 </div>
 
 <div>
-<button type="submit">保存</button>
+<button type="submit"
+class="bg-rose-500 text-white px-2 py-1 rounded-md hover:bg-rose-700 transition shadow-xl" >
+保存
+</button>
 </div>
 </form>
 
@@ -134,7 +142,10 @@
         <textarea name="comment" id="comment">{{old('comment')}}</textarea>
     </div>
 
-    <button type="submit">コメント追加</button>
+    <button type="submit"
+    class="bg-rose-500 text-white px-2 py-1 rounded-md hover:bg-rose-700 transition shadow-xl">
+        コメント追加
+    </button>
 </form>
 
 <hr>
@@ -182,7 +193,12 @@
     </div>
 
     <div>
-        <button type="submit">更新</button>
+        <button type="submit"
+        class="bg-rose-500 text-white px-2 py-1 rounded-md hover:bg-rose-700 transition shadow-xl">
+            更新
+        </button>
     </div>
 
 </form>
+
+</x-app-layout>
