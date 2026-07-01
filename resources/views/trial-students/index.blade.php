@@ -6,6 +6,7 @@
     </a>
     </x-slot>
 
+    <div class="bg-white rounded-xl shadow-md p-6">
 <table class="w-full border-collapse">
     <tr>
         <th class="bg-yellow-300 px-4 py-3 text-left border-b border-gray-500">名前</th>
@@ -24,7 +25,7 @@
         <td class="px-4 py-3 border-b border-gray-400">{{$trialStudent->status}}</td>
         <td class="px-4 py-3 border-b border-gray-400">{{$trialStudent->trial_date}}</td>
         <td class="px-4 py-3 border-b border-gray-400">{{$trialStudent->join_month}}</td>
-        <td class="px-4 py-3 border-b border-gray-400">{{$trialStudent->has_unread_comment ? '⚫︎' : ''}}</td>
+        <td class="px-4 py-3 border-b border-gray-400">{{$trialStudent->has_unread_comment ? '🔵' : ''}}</td>
         <td class="px-4 py-3 border-b border-gray-400">
             <a href="{{route('trial-students.show',$trialStudent)}}"
             class="bg-rose-500 text-white px-2 py-1 rounded-md  hover:bg-rose-700 transition shadow-md">
@@ -34,4 +35,5 @@
     </tr>
     @endforeach
 </table>
+</div>
 </x-app-layout>
