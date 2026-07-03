@@ -1,8 +1,12 @@
-<a href="{{route('trial-students.index')}}">
+<x-app-layout>
+    <x-slot name="header">
+<a href="{{route('trial-students.index')}}"
+class="bg-rose-500 text-white rounded-lg px-4 py-2 hover:bg-rose-700 transition shadow-xl">
     一覧に戻る
 </a>
+</x-slot>
 
-<h2>新規登録</h2>
+<h2 class="bg-yellow-300 px-5 py-3">新規登録</h2>
 
 <form action="{{route('trial-students.store')}}" method="post">
     @csrf
@@ -31,3 +35,4 @@
 
     <button type="submit">登録</button>
 </form>
+</x-app-layout>
