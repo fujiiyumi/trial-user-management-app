@@ -38,6 +38,6 @@
 </div>
 
 
-{{$trialStudent->links()}}
+{{$trialStudents->links()}}
 
 </x-app-layout>
