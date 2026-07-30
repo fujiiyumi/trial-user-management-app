@@ -10,7 +10,9 @@ class TrialStudentController extends Controller
 {
     public function index()
     {
-        $trialStudents = TrialStudent::all();
+        $trialStudents = TrialStudent::query()
+        ->paginate(10)
+        ->withQueryString();
 
         return view('trial-students.index', compact('trialStudents'));
     }

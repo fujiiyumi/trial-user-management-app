@@ -36,4 +36,8 @@
     @endforeach
 </table>
 </div>
+
+
+{{$trialStudent->links()}}
+
 </x-app-layout>
