@@ -6,6 +6,14 @@
     </a>
     </x-slot>
 
+<form action="{{route('trial-students.index')}}" method="get">
+    <input type="text" name="keyword" value="{{request('keyword')}}" placeholder="名前検索">
+    <button type="submit"
+    class="bg-rose-500 text-white px-2 py-1 rounded-md hover:bg-rose-700 transition shadow-md">
+    検索
+</button>
+</form>
+
     <div class="bg-white rounded-xl shadow-md p-6">
 <table class="w-full border-collapse">
     <tr>

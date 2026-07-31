@@ -8,12 +8,20 @@ use App\Models\Comment;
 
 class TrialStudentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $trialStudents = TrialStudent::query()
-        ->paginate(10)
-        ->withQueryString();
+        $keyword = $request->keyword;
 
+        $query = TrialStudent::query();
+
+        $query->when($keyword,function($query,$keyword){
+            $query->where('name','like',"%{$keyword}%");
+        });
+
+        $trialStudents = $query
+        ->paginate(5)
+        ->withQueryString();        
+    
         return view('trial-students.index', compact('trialStudents'));
     }
 
